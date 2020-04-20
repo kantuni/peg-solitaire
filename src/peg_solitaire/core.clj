@@ -5,7 +5,7 @@
 (declare successful-move prompt-move game-over query-rows)
 
 (defn tri*
-  "Generates lazy sequence of triangular numbers"
+  "Generate lazy sequence of triangular numbers"
   ([] (tri* 0 1))
   ([sum n]
    (let [new-sum (+ sum n)]
@@ -14,17 +14,17 @@
 (def tri (tri*))
 
 (defn triangular?
-  "Checks if the number is triangular (i.e. 1, 3, 6, ...)"
+  "Check if the number is triangular (i.e. 1, 3, 6, ...)"
   [n]
   (= n (last (take-while #(>= n %) tri))))
 
 (defn row-tri
-  "Returns the triangular number at the end of row n"
+  "Return the triangular number at the end of row n"
   [n]
   (last (take n tri)))
 
 (defn row-num
-  "Returns row number of the position"
+  "Return row number of the position"
   [pos]
   (inc (count (take-while #(> pos %) tri))))
 
