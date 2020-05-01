@@ -2,13 +2,13 @@
   (:require [clojure.set :as set])
   (:gen-class))
 
-(declare 
- user-entered-valid-move 
- user-entered-invalid-move 
- prompt-move
- prompt-rows
- prompt-empty-peg
- game-over)
+(declare
+  user-entered-valid-move
+  user-entered-invalid-move
+  prompt-move
+  prompt-rows
+  prompt-empty-peg
+  game-over)
 
 ;; Creating the board
 
@@ -47,7 +47,7 @@
     board))
 
 (defn connect-right
-  "Form a mutual connection between the given position and 
+  "Form a mutual connection between the given position and
   the one to its right"
   [board max-pos pos]
   (let [neighbor (inc pos)
@@ -57,7 +57,7 @@
       board)))
 
 (defn connect-down-left
-  "Form a mutual connection between the given position and 
+  "Form a mutual connection between the given position and
   the one to its down-left"
   [board max-pos pos]
   (let [row (row-num pos)
@@ -151,9 +151,9 @@
 (def pos-chars 3)
 
 (def ansi-styles
-  {:red "[31m"
+  {:red   "[31m"
    :green "[32m"
-   :blue "[34m"
+   :blue  "[34m"
    :reset "[0m"})
 
 (defn ansi
